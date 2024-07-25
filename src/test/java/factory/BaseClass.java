@@ -2,13 +2,14 @@ package factory;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.MalformedURLException;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
@@ -90,11 +91,23 @@ public class BaseClass {
 	}
 
 	public static Properties getProperties() throws IOException {
-		FileReader file = new FileReader(System.getProperty("user.dir") + "\\ser\\test\\resources\\config.properties");
+		FileReader file = new FileReader(System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties");
 		p = new Properties();
 		p.load(file);
 		return p;
 
 	}
+	
+	public static Logger getLogger()
+	{
+		logger=LogManager.getLogger();
+		return logger;
+	}
+	
+	
+	
+	
+	
+	
 
 }

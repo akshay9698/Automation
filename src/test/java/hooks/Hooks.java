@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Properties;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import factory.BaseClass;
@@ -25,6 +27,18 @@ public class Hooks {
 	@After
 	public void tearDown() {
 		driver.close();
+	}
+	
+	
+	@AfterStep
+	public void addScreenshot(Scenario scenario)
+	{
+		if(scenario.isFailed())
+		{
+			TakesScreenshot ts =(TakesScreenshot) driver;
+			byte[] screenshot=ts.getScreenshotAs(OutputType.BYTES);
+        	scenario.attach(screenshot, "image/png",scenario.getName());
+		}
 	}
 
 }
