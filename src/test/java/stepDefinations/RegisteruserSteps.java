@@ -20,26 +20,26 @@ public class RegisteruserSteps {
 	
 	
 	@Then("Verify New User Signup! is visible")
-	public void verify_new_user_signup_is_visible() {
+	public void verifyUserSignupText() {
 	    String text=lp.getNewUserText();
 	    Assert.assertEquals(text, "New User Signup!");
 	}
 
 	@When("User enters name and email address and clicks on sign up button")
-	public void user_enters_name_and_email_address_and_clicks_on_sign_up_button() {
+	public void entersNameAndEmail() {
 	    lp.setName(BaseClass.randomeString());
 	    lp.setnewEmail(BaseClass.randomAlphaNumeric()+"@gmail.com");
 	    lp.clickSignUp();
 	}
 
 	@Then("Verify that ENTER ACCOUNT INFORMATION is visible")
-	public void verify_that_enter_account_information_is_visible() {
+	public void verifyEnterAccountInformation() {
 	    String text=rp.getRegisterText();
 	    Assert.assertEquals(text, "ENTER ACCOUNT INFORMATION");
 	}
 
-	@When("User fills registraion form")
-	public void user_fills_registraion_form() {
+	@When("User fills registration form")
+	public void setRegistrationForm() {
 	    rp.selectGender();
 	    rp.setPassword(BaseClass.randomAlphaNumeric());
 	    rp.setDay("2");
@@ -59,40 +59,40 @@ public class RegisteruserSteps {
 	}
 
 	@When("clicks on create account button")
-	public void clicks_on_create_account_button() {
+	public void clickCreateAccountButton() {
 	    rp.clickCreateAccount();
 	}
 
 	@Then("Verify that ACCOUNT CREATED! is visible")
-	public void verify_that_account_created_is_visible() {
+	public void verifyAccountCreated() {
 	    String conMsg=rp.getCofMessage();
 	    Assert.assertEquals(conMsg, "ACCOUNT CREATED!");
 	}
 
-	@When("click on contione button")
-	public void click_on_contione_button() {
+	@When("click on continue button")
+	public void clickContinueButton() {
 	    rp.clickContinue();
 	}
 
 	@Then("Verify that Logged in as username is visible")
-	public void verify_that_logged_in_as_username_is_visible() {
+	public void verifyLoggedInAsUsername() {
 		String userName=hp.getUserName();
 		System.out.println(userName);
 	}
 
 	@When("Click Delete Account button")
-	public void click_delete_account_button() {
+	public void clickDeleteAccountButton() {
 	    hp.clickDeleteAcc();
 	}
 
 	@Then("Verify that ACCOUNT DELETED! is visible")
-	public void verify_that_account_deleted_is_visible() {
-	    Assert.assertEquals(true,hp.isAccountDeleted() );
+	public void verifyAccountDeleted() {
+        Assert.assertTrue(hp.isAccountDeleted());
 		
 	}
 
 	@When("click Continue button")
-	public void click_continue_button() {
+	public void clickDeleteContinueButton() {
 	    hp.clickContinue();
 	}
 
