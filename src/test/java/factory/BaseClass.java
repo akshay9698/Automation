@@ -9,15 +9,20 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseClass {
 
@@ -97,17 +102,37 @@ public class BaseClass {
 		return p;
 
 	}
-	
-	public static Logger getLogger()
-	{
-		logger=LogManager.getLogger();
+
+	public static Logger getLogger() {
+		logger = LogManager.getLogger();
 		return logger;
 	}
-	
-	
-	
-	
-	
-	
+
+	public static String randomeString() {
+		String generatedString = RandomStringUtils.randomAlphabetic(5);
+		return generatedString;
+	}
+
+	public static String randomeNumber() {
+		String generatedString = RandomStringUtils.randomNumeric(10);
+		return generatedString;
+	}
+
+	public static String randomAlphaNumeric() {
+		String str = RandomStringUtils.randomAlphabetic(5);
+		String num = RandomStringUtils.randomNumeric(3);
+		return str + num;
+	}
+
+	public static void explicitVisibilityWait(WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(90));
+		wait.until(ExpectedConditions.visibilityOf(element));
+
+	}
+
+	public static void selectByVisibleText(WebElement element, String text) {
+		Select select = new Select(element);
+		select.selectByVisibleText(text);
+	}
 
 }

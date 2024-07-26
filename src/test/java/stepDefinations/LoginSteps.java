@@ -41,7 +41,9 @@ public class LoginSteps {
 	@Then("logged in username should be displayed.")
 	public void logged_in_username_should_be_displayed() {
 		
-		Assert.assertTrue(hp.isLoginNameDisplayed());
+		String name=hp.getUserName();
+		name.equalsIgnoreCase(name);
+		Assert.assertEquals(name, "Ak");
 	    
 	}
 
