@@ -8,15 +8,16 @@ import org.openqa.selenium.WebDriver;
 import pageObjects.ContactUsPage;
 import pageObjects.Headers;
 
-
-
-
-
-
 public class ContactUsSteps {
+
+    WebDriver driver=BaseClass.getDriver();
+    ContactUsPage cp;
+    Headers hp;
+
+
     @Given("User navigate to contact us page")
     public void user_navigate_to_contact_us_page() {
-        Headers hp=new Headers(BaseClass.getDriver());
+        hp=new Headers(BaseClass.getDriver());
         hp.clickContactUs();
 
     }
@@ -28,7 +29,7 @@ public class ContactUsSteps {
     }
     @When("User Enter name, email, subject and message")
     public void user_enter_name_email_subject_and_message() {
-        ContactUsPage cp=new ContactUsPage(BaseClass.getDriver());
+        cp=new ContactUsPage(BaseClass.getDriver());
         cp.setTxtContactPageName(BaseClass.randomeString());
         cp.setTxtContactPageEmail(BaseClass.randomAlphaNumeric()+"@gmail.com");
         cp.setTxtContactPageSubject(BaseClass.randomeString());
@@ -38,24 +39,23 @@ public class ContactUsSteps {
     }
     @When("Upload file and clicks submit")
     public void upload_file_and_clicks_submit() {
-        ContactUsPage cp=new ContactUsPage(BaseClass.getDriver());
         cp.uploadFileInContactUsPage(System.getProperty("user.dir")+"\\testData\\Day60.txt");
+        cp.clickSubmit();
 
     }
     @Then("Verify success message Success! Your details have been submitted successfully. is visible")
     public void verify_success_message_success_your_details_have_been_submitted_successfully_is_visible() {
-        ContactUsPage cp=new ContactUsPage(BaseClass.getDriver());
+        driver.switchTo().alert().accept();
+        Assert.assertEquals("Success! Your details have been submitted successfully.",cp.getConfirmMessage());
 
 
     }
-    @When("User Click {string} button")
-    public void user_click_button(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("User Click Home button")
+    public void clickHome() {
+        cp.clickHomeButton();
     }
     @Then("verify that landed to home page successfully")
     public void verify_that_landed_to_home_page_successfully() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Assert.assertEquals("Automation Exercise",driver.getTitle());
     }
 }

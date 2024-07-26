@@ -5,5 +5,5 @@ Feature: Contact us form
     When User Enter name, email, subject and message
     And Upload file and clicks submit
     Then Verify success message Success! Your details have been submitted successfully. is visible
-    When User Click 'Home' button
+    When User Click Home button
     Then verify that landed to home page successfully
