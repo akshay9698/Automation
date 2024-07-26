@@ -13,3 +13,9 @@ Feature: Register User
     When Click Delete Account button
     Then Verify that ACCOUNT DELETED! is visible
     When click Continue button
+
+  Scenario: Register with existing email
+    Given The user navigate to login page
+    Then Verify New User Signup! is visible
+    When User enters name and existing email address as "aks@gmail.com" and clicks on sign up button
+    Then Verify error Email Address already exist! is visible

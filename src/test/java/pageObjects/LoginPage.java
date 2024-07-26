@@ -22,6 +22,9 @@ public class LoginPage extends BasePage{
 	
 	@FindBy(xpath="//button[normalize-space()='Login']")
 	WebElement btnLogin;
+
+	@FindBy(xpath="//p[normalize-space()='Email Address already exist!']")
+	WebElement txtEmailExist;
 	
 	
 	//Sign up
@@ -76,6 +79,12 @@ public class LoginPage extends BasePage{
 	{
 		BaseClass.explicitVisibilityWait(titleText);
 		return titleText.getText();
+	}
+
+	public String getErrorMessage()
+	{
+		BaseClass.explicitVisibilityWait(txtEmailExist);
+		return txtEmailExist.getText();
 	}
 
 }

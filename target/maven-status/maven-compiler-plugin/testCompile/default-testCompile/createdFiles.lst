@@ -1,0 +1,9 @@
+pageObjects\RegisterPage.class
+pageObjects\LoginPage.class
+pageObjects\BasePage.class
+testRunner\TestRunner.class
+pageObjects\HomePage.class
+stepDefinations\RegisteruserSteps.class
+factory\BaseClass.class
+hooks\Hooks.class
+stepDefinations\LoginSteps.class

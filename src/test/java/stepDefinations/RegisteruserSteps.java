@@ -1,26 +1,28 @@
 package stepDefinations;
 
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
+
 
 import factory.BaseClass;
 import io.cucumber.java.en.*;
 
-import pageObjects.HomePage;
+import pageObjects.Headers;
 import pageObjects.LoginPage;
 import pageObjects.RegisterPage;
 
 public class RegisteruserSteps {
 	
-	public WebDriver driver=BaseClass.getDriver();
-	public HomePage  hp=new HomePage(driver);
-	public LoginPage lp=new LoginPage(driver);;
-	public RegisterPage rp=new RegisterPage(driver);
+
+	Headers hp;
+	LoginPage lp;
+	RegisterPage rp;
+
 
 	
 	
 	@Then("Verify New User Signup! is visible")
 	public void verifyUserSignupText() {
+		lp=new LoginPage(BaseClass.getDriver());
 	    String text=lp.getNewUserText();
 	    Assert.assertEquals(text, "New User Signup!");
 	}
@@ -34,6 +36,7 @@ public class RegisteruserSteps {
 
 	@Then("Verify that ENTER ACCOUNT INFORMATION is visible")
 	public void verifyEnterAccountInformation() {
+		rp=new RegisterPage(BaseClass.getDriver());
 	    String text=rp.getRegisterText();
 	    Assert.assertEquals(text, "ENTER ACCOUNT INFORMATION");
 	}
@@ -76,6 +79,7 @@ public class RegisteruserSteps {
 
 	@Then("Verify that Logged in as username is visible")
 	public void verifyLoggedInAsUsername() {
+		hp=new Headers(BaseClass.getDriver());
 		String userName=hp.getUserName();
 		System.out.println(userName);
 	}
@@ -94,6 +98,23 @@ public class RegisteruserSteps {
 	@When("click Continue button")
 	public void clickDeleteContinueButton() {
 	    hp.clickContinue();
+	}
+
+	@When("User enters name and existing email address as {string} and clicks on sign up button")
+	public void enterNameAndExistingEmail(String email) {
+		try {
+			lp.setName(BaseClass.randomeString());
+			lp.setnewEmail(email);
+			lp.clickSignUp();
+		}catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+
+	}
+	@Then("Verify error Email Address already exist! is visible")
+	public void verifyErrorMessageEmailAlreadyExist() {
+		Assert.assertEquals("Email Address already exist!",lp.getErrorMessage());
 	}
 
 }

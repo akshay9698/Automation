@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 
 import factory.BaseClass;
 
-public class HomePage extends BasePage {
+public class Headers extends BasePage {
 
-	public HomePage(WebDriver driver) {
+	public Headers(WebDriver driver) {
 		super(driver);
 	}
 
@@ -27,6 +27,13 @@ public class HomePage extends BasePage {
 
 	@FindBy(xpath = "//a[normalize-space()='Continue']")
 	WebElement hpContinue;
+
+	@FindBy(xpath="//a[normalize-space()='Logout']")
+	WebElement lnkLogout;
+
+	@FindBy(xpath="//a[normalize-space()='Contact us']")
+	WebElement lnkContactUs;
+
 
 	public void clickSignin() {
 		lnkSigninUp.click();
@@ -47,6 +54,14 @@ public class HomePage extends BasePage {
 
 	public void clickContinue() {
 		hpContinue.click();
+	}
+
+	public void clickLogout(){
+		lnkLogout.click();
+	}
+
+	public void clickContactUs() {
+		lnkContactUs.click();
 	}
 
 }

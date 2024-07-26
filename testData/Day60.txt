@@ -1,0 +1,58 @@
+Cucumber framework
+-------------------
+
+workspace --> staging/indexing--->git(local repo)---->GitHub(remote repo)
+
+Round 1
+------------
+1) create an empty remote repository and get the url
+https://github.com/pavanoltraining/opencart_cucumber.git
+
+2) create a local repository
+
+   Right on Project-->Team-->Share Project-->Create Repository-->Finish
+
+3) Adding files to index/staging
+
+  Right on Project-->Team-->Add to index
+
+
+4) Commiting files to local repo(git)
+
+Right on Project--->Team-->commit-->Provided commit message-->click on commit button.
+
+5) Push the files to remote/github repository
+	Team-->Push Branch Master     
+	Provide destination repository details in the form.......
+
+
+Remote name: origin
+	URI:  https://github.com/pavanoltraining/opencart_cucumber.git
+	Host: github.com
+	Repository path: /pavanoltraining/opencart_cucumber.git
+
+	User: github email
+	Password: <<token password>>
+Click on Preview-->Click on Preview-->Click on Push-->Close
+
+
+Round 2 : Pull from Git Hub
+------------------------
+Team--> Pull  (first option)
+
+
+
+
+
+Cloning the existing repository
+-----------
+https://github.com/pavanoltraining/testing.git
+
+
+import --> Git-->Projects from Git--->Clone URL-->provide URI -->
+
+
+
+
+
+

@@ -6,19 +6,19 @@ import org.openqa.selenium.WebDriver;
 import factory.BaseClass;
 import io.cucumber.java.en.*;
 
-import pageObjects.HomePage;
+import pageObjects.Headers;
 import pageObjects.LoginPage;
 
 public class LoginSteps {
 	
 	WebDriver driver;
-	HomePage hp;
+	Headers hp;
 	LoginPage lp;
 	
 	
 	@Given("The user navigate to login page")
 	public void the_user_navigate_to_login_page() {
-	    hp=new HomePage(BaseClass.getDriver());
+	    hp=new Headers(BaseClass.getDriver());
 	    hp.clickSignin();
 	}
 
@@ -38,11 +38,11 @@ public class LoginSteps {
 	    
 	}
 
-	@Then("logged in username should be displayed.")
+	@Then("logged in username should be displayed and click on logout")
 	public void logged_in_username_should_be_displayed() {
 		
 		String name=hp.getUserName();
-		name.equalsIgnoreCase(name);
+		hp.clickLogout();
 		Assert.assertEquals(name, "Ak");
 	    
 	}
