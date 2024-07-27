@@ -1,9 +1,14 @@
 pageObjects\RegisterPage.class
+stepDefinations\RegisteruserSteps.class
+stepDefinations\LoginSteps.class
+stepDefinations\ProductsSteps.class
 pageObjects\LoginPage.class
 pageObjects\BasePage.class
 testRunner\TestRunner.class
-pageObjects\HomePage.class
-stepDefinations\RegisteruserSteps.class
+pageObjects\Headers.class
+stepDefinations\TestCaseSteps.class
+pageObjects\ProductsPage.class
+pageObjects\ContactUsPage.class
 factory\BaseClass.class
 hooks\Hooks.class
-stepDefinations\LoginSteps.class
+stepDefinations\ContactUsSteps.class
