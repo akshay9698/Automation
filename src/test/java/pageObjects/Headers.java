@@ -37,6 +37,9 @@ public class Headers extends BasePage {
 	@FindBy(xpath="//a[contains(text(),'Test Cases')]")
 	WebElement lnkTestCases;
 
+	@FindBy(xpath="//a[@href='/products']")
+	WebElement lnkProducts;
+
 
 	public void clickSignin() {
 		lnkSigninUp.click();
@@ -69,6 +72,11 @@ public class Headers extends BasePage {
 
 	public void clickTestCases() {
 		lnkTestCases.click();
+	}
+
+	public void clickProducts()
+	{
+		lnkProducts.click();
 	}
 
 }
