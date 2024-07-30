@@ -1,5 +1,6 @@
 Feature: Log in
 
+  @sanity @regression
   Scenario: Log in with valid credentials
     Given The user navigate to login page
     When user enter email as "aks@gmail.com" and password as "@Kshay12"

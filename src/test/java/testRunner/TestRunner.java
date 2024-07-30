@@ -9,11 +9,12 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 
 						features= {".//Features/"},
-						// features= {".//Features/Login.feature"},
+						//features= {".//Features/Login.feature"},
 						//features = { ".//Features/Registration.feature" },
 						//features = { ".//Features/ContactUs.feature" },
 						//features = { ".//Features/TestCase.feature" },
 						//features = { ".//Features/Products.feature" },
+						//features= {".//Features/HomePage.feature"},
 						//features= {"@target/rerun.txt"},
 				
 						glue = { "stepDefinations", "hooks" }, 
@@ -23,14 +24,15 @@ import io.cucumber.junit.CucumberOptions;
 				
 									dryRun = false, // checks mapping between scenario steps and step definition methods
 									monochrome = true, // to avoid junk characters in output
-									publish = true // to publish report in cucumber server
-							// tags="@sanity" // this will execute scenarios tagged with @sanity
+									publish = true
+									// to publish report in cucumber server
+							//tags="@sanity", // this will execute scenarios tagged with @sanity
 							// tags="@regression"
-							// tags="@sanity and @regression" //Scenarios tagged with both @sanity and
+							//tags="@sanity and @regression" //Scenarios tagged with both @sanity and
 							// @regression
 							// tags="@sanity and not @regression" //Scenarios tagged with @sanity but not
 							// tagged with @regression
-							// tags="@sanity or @regression" //Scenarios tagged with either @sanity or
+							//tags="@sanity or @regression" //Scenarios tagged with either @sanity or
 							// @regression
 
 )

@@ -18,10 +18,15 @@ public class Hooks {
 
 	@Before
 	public void setUp() throws IOException, URISyntaxException {
+		try {
 		p = BaseClass.getProperties();
 		driver = BaseClass.initilizeBrowser();
 		driver.get(p.getProperty("appURL"));
 		driver.manage().window().maximize();
+		}catch(Exception e)
+		{
+			System.err.println("Page load timeout occurred: " + e.getMessage());
+		}
 	}
 
 	@After

@@ -140,4 +140,21 @@ public class BaseClass {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", element);
 	}
+	
+	public static void scrollDown(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", element);
+	}
+	
+	public static String getTitle()
+	{
+		return driver.getTitle();
+	}
+	
+	public static String getCurrentUrl()
+	{
+		return driver.getCurrentUrl();
+	}
+	
+	
 }
