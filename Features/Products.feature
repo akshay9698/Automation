@@ -21,17 +21,11 @@ Feature: products features
     And Verify SEARCHED PRODUCTS is visible
     And Verify all the products related to search are visible
 
-<<<<<<< HEAD
-  #Scenario: Verify add products in cart
-    #When Hover over first product and click Add to cart and clicks Continue Shopping button
-    #And Hover over second product and click Add to cart and  clicks View Cart button
-    #Then Verify both products are added to Cart
-    #And Verify their prices, quantity and total price
-=======
+
   Scenario: Verify add products in cart
    Given User navigate to products page
     When Hover over first product and click Add to cart and clicks Continue Shopping button
     And Hover over second product and click Add to cart and  clicks View Cart button
     Then Verify both products are added to Cart
     And Verify their prices, quantity and total price
->>>>>>> df1f2bf9cc024d34dd9d403bb693f1aa64daff3c
+
