@@ -9,11 +9,11 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 
 						//features= {".//Features/"},
-						//features= {".//Features/Login.feature"},
+						features= {".//Features/Login.feature"},
 						//features = { ".//Features/Registration.feature" },
 						//features = { ".//Features/ContactUs.feature" },
 						//features = { ".//Features/TestCase.feature" },
-						features = { ".//Features/Products.feature" },
+						//features = { ".//Features/Products.feature" },
 						//features= {".//Features/HomePage.feature"},
 						//features= {"@target/rerun.txt"},
 				
