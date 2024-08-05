@@ -49,6 +49,11 @@ public class Headers extends BasePage {
 		BaseClass.explicitVisibilityWait(userName);
 		return userName.getText();
 	}
+	
+	public boolean isUserNameDisplayed()
+	{
+		return userName.isDisplayed();
+	}
 
 	public void clickDeleteAcc() {
 		deleteAccount.click();
@@ -77,6 +82,11 @@ public class Headers extends BasePage {
 	public void clickProducts()
 	{
 		lnkProducts.click();
+	}
+	
+	public boolean isLogoutDisplayed()
+	{
+		return lnkLogout.isDisplayed();
 	}
 
 }
