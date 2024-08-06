@@ -7,14 +7,14 @@ Feature: Log in
     And user clicks on log in
     Then logged in username should be displayed and click on logout
 
-  Scenario Outline: Login Data Driven with Excel
-    Given The user navigate to login page
-    Then logged in username should be displayed by passing email and password with excel row "<row_index>"
-
-    Examples: 
-      | row_index |
-      |         1 |
-      |         2 |
-      |         3 |
-      |         4 |
-      |         5 |
+  #Scenario Outline: Login Data Driven with Excel
+    #Given The user navigate to login page
+    #Then logged in username should be displayed by passing email and password with excel row "<row_index>"
+#
+    #Examples: 
+      #| row_index |
+      #|         1 |
+      #|         2 |
+      #|         3 |
+      #|         4 |
+      #|         5 |

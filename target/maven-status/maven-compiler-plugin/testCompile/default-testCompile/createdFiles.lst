@@ -1,4 +1,5 @@
 pageObjects\RegisterPage.class
+utilities\DataReader$1.class
 stepDefinations\RegisteruserSteps.class
 stepDefinations\LoginSteps.class
 stepDefinations\ProductsSteps.class

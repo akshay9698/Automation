@@ -19,6 +19,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -154,6 +155,18 @@ public class BaseClass {
 	public static String getCurrentUrl()
 	{
 		return driver.getCurrentUrl();
+	}
+	
+	public static void moveToElement(WebElement element)
+	{
+		Actions actions=new Actions(driver);
+		actions.moveToElement(element).perform();
+	}
+	
+	public static void moveToElementClick(WebElement element)
+	{
+		Actions actions=new Actions(driver);
+		actions.moveToElement(element).click().perform();
 	}
 	
 	
