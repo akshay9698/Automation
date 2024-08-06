@@ -42,6 +42,21 @@ public class ProductsPage extends BasePage{
 
     @FindBy(xpath="//h2[normalize-space()='Searched Products']")
     WebElement searchedProductsText;
+    
+    @FindBy(xpath="//img[@src='/get_product_picture/1']")
+    WebElement hoverFirstProduct;
+    
+    @FindBy(xpath="//a[@data-product-id='1']")
+    WebElement btnAddToCart1;
+    
+    @FindBy(xpath="//button[normalize-space()='Continue Shopping']")
+    WebElement btnContinueShopping;
+    
+    @FindBy(xpath="//a[@data-product-id='2']")
+    WebElement btnAddToCart2;
+    
+    @FindBy(xpath="//u[normalize-space()='View Cart']")
+    WebElement btnViewCart;
 
     public String getAllProductsText()
     {
@@ -107,6 +122,28 @@ public class ProductsPage extends BasePage{
         }
         return true;
     }
+    
+    public void clickAddToCartFirst()
+    {
+    	BaseClass.javascriptClick(btnAddToCart1);  }
+    
+    public void clickContinueShopping()
+    {
+    	btnContinueShopping.click();
+    }
+    
+    public void clickAddToCartSec()
+    {
+    	BaseClass.javascriptClick(btnAddToCart2);  
+    }
+    
+    public void clickViewCart()
+    {
+    	btnViewCart.click();
+    }
+    
+    
+    
 
 
 

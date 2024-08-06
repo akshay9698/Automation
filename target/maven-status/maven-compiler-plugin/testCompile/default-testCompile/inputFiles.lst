@@ -2,8 +2,10 @@ C:\Users\aksha\git\Automation\src\test\java\factory\BaseClass.java
 C:\Users\aksha\git\Automation\src\test\java\stepDefinations\HomePageSteps.java
 C:\Users\aksha\git\Automation\src\test\java\pageObjects\ContactUsPage.java
 C:\Users\aksha\git\Automation\src\test\java\stepDefinations\ProductsSteps.java
+C:\Users\aksha\git\Automation\src\test\java\utilities\DataReader.java
 C:\Users\aksha\git\Automation\src\test\java\pageObjects\Headers.java
 C:\Users\aksha\git\Automation\src\test\java\stepDefinations\RegisteruserSteps.java
+C:\Users\aksha\git\Automation\src\test\java\pageObjects\CartPage.java
 C:\Users\aksha\git\Automation\src\test\java\pageObjects\HomePage.java
 C:\Users\aksha\git\Automation\src\test\java\hooks\Hooks.java
 C:\Users\aksha\git\Automation\src\test\java\pageObjects\BasePage.java
