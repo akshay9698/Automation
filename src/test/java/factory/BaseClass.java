@@ -141,33 +141,28 @@ public class BaseClass {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", element);
 	}
-	
+
 	public static void scrollDown(WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", element);
 	}
-	
-	public static String getTitle()
-	{
+
+	public static String getTitle() {
 		return driver.getTitle();
 	}
-	
-	public static String getCurrentUrl()
-	{
+
+	public static String getCurrentUrl() {
 		return driver.getCurrentUrl();
 	}
-	
-	public static void moveToElement(WebElement element)
-	{
-		Actions actions=new Actions(driver);
+
+	public static void moveToElement(WebElement element) {
+		Actions actions = new Actions(driver);
 		actions.moveToElement(element).perform();
 	}
-	
-	public static void moveToElementClick(WebElement element)
-	{
-		Actions actions=new Actions(driver);
+
+	public static void moveToElementClick(WebElement element) {
+		Actions actions = new Actions(driver);
 		actions.moveToElement(element).click().perform();
 	}
-	
-	
+
 }
